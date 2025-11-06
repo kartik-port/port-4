@@ -1,0 +1,12 @@
+/node_modules
+/build
+/dist
+.git
+.gitignore
+npm-debug.log*
+README.md
+yard-debug.log*
+.vscode
+.idea
+*.DS_Store
+yarn-error.log*
