@@ -15,9 +15,17 @@ const App = () => {
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
+    // Set a timeout to ensure the app loads even if progress doesn't reach 100%
+    const timer = setTimeout(() => {
+      setIsReady(true);
+    }, 3000);
+
     if (progress === 100) {
       setIsReady(true);
+      clearTimeout(timer);
     }
+
+    return () => clearTimeout(timer);
   }, [progress]);
 
   return (
